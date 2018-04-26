@@ -1,0 +1,105 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+<android.support.v7.widget.Toolbar
+    android:id="@+id/toolbar"
+    android:minHeight="?attr/actionBarSize"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/ToolbarColor">
+
+
+
+
+    <LinearLayout
+        android:weightSum="4"
+        android:layout_width="fill_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:orientation="horizontal">
+
+
+
+        <LinearLayout
+            android:id="@+id/toolbar_back_analytics"
+            android:paddingLeft="20sp"
+            android:gravity="start"
+            android:layout_weight="1"
+            android:layout_width="0sp"
+            android:layout_height="?android:attr/actionBarSize"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_gravity="end|center_vertical"
+                android:textSize="15sp"
+                android:id="@+id/toolbar_back_category"
+                style="@style/TextAppearance.Widget.AppCompat.Toolbar.Subtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:drawableRight="@drawable/back_edit"
+                android:background="?attr/selectableItemBackground"
+                android:gravity="center_vertical|end"
+                android:textAllCaps="true" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:paddingLeft="20sp"
+            android:gravity="center"
+            android:layout_weight="2"
+            android:layout_width="0sp"
+            android:layout_height="?android:attr/actionBarSize"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/category_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Analytics"
+                android:textColor="@color/textColor"
+                style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+                android:layout_gravity="center"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:paddingRight="20sp"
+            android:gravity="end"
+            android:layout_weight="1"
+            android:layout_width="0sp"
+            android:layout_height="?android:attr/actionBarSize"
+            android:orientation="horizontal">
+        </LinearLayout>
+
+    </LinearLayout>
+</android.support.v7.widget.Toolbar>
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:weightSum="6"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <android.support.v4.view.ViewPager
+            android:layout_weight="5.5"
+            android:id="@+id/tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="0sp"/>
+
+
+        <android.support.design.widget.TabLayout
+            app:tabTextColor="@color/hintColor"
+            app:tabSelectedTextColor="@color/textColor"
+            android:background="@color/ToolbarColor"
+            android:layout_weight="0.5"
+            android:id="@+id/tab_selection"
+            android:layout_width="match_parent"
+            android:layout_height="0sp" />
+    </LinearLayout>
+
+
+</LinearLayout>

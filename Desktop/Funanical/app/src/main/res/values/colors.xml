@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#000000</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#000000</color>
+    <color name="textColor">#FFFFFF</color>
+    <color name="hintColor">#C7C4C4</color>
+    <color name="backColor">#A2C2DA</color>
+    <color name="backColor2">#FBF57C</color>
+    <color name="ToolbarColor">#3b577d</color>
+    <color name="GraphTitleColor">#A29488</color>
+    <color name="cancelBtn">#EF8871</color>
+    <color name="saveBtn">#AAE16B</color>
+    <color name="popUpBackground">#E0E3DC</color>
+    <color name="dark_1st_blue">#3b577d</color>
+    <color name="dark_2nd_blue">#44679f</color>
+    <color name="dark_3rd_blue">#C0D9E5</color>
+
+
+
+</resources>

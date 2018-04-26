@@ -1,0 +1,35 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#000000</item>
+        <item name="colorPrimaryDark">#3b577d</item>
+        <item name="colorAccent">#3b577d</item>
+        <item name="android:navigationBarColor">#3b577d</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="datepicker" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowBackground">@color/dark_2nd_blue</item>
+        <item name="android:textColorPrimary">@color/textColor</item>
+        <item name="android:textColorSecondary">@color/textColor</item>
+        <item name="android:colorForegroundInverse">@color/textColor</item>
+        <item name="android:textColorPrimaryInverse">@color/dark_1st_blue</item>
+        <item name="android:textColorSecondaryInverse">@color/dark_1st_blue</item>
+        <item name="colorPrimary">@color/dark_1st_blue</item>
+        <item name="colorPrimaryDark">@color/dark_2nd_blue</item>
+        <item name="colorAccent">@color/dark_3rd_blue</item>
+
+    </style>
+
+</resources>
+

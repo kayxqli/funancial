@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:minHeight="?attr/actionBarSize"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/ToolbarColor">
+
+
+
+
+        <LinearLayout
+            android:weightSum="2"
+            android:layout_width="fill_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:orientation="horizontal">
+
+
+            <LinearLayout
+                android:id="@+id/cancel"
+                android:layout_width="0sp"
+                android:layout_height="?android:attr/actionBarSize"
+                android:layout_weight="1"
+                android:gravity="start"
+                android:orientation="horizontal"
+                android:paddingLeft="20sp">
+
+                <TextView
+                    style="@style/TextAppearance.Widget.AppCompat.Toolbar.Subtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="end|center_vertical"
+                    android:background="?attr/selectableItemBackground"
+                    android:gravity="center_vertical|end"
+                    android:text="@string/cancel_btn"
+                    android:textAllCaps="true"
+                    android:textColor="@color/textColor"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:paddingRight="20sp"
+                android:gravity="end"
+                android:layout_weight="1"
+                android:layout_width="0sp"
+                android:layout_height="?android:attr/actionBarSize"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:textColor="@color/textColor"
+                    android:textSize="15sp"
+                    android:id="@+id/save"
+                    style="@style/TextAppearance.Widget.AppCompat.Toolbar.Subtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="?attr/selectableItemBackground"
+                    android:gravity="center_vertical|end"
+                    android:text="@string/save_btn"
+                    android:textAllCaps="true" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+
+    </android.support.v7.widget.Toolbar>
+
+
+    <LinearLayout
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_width="0px"
+        android:layout_height="0px"/>
+
+    <TableLayout
+        android:id="@+id/nameLayout"
+        android:paddingTop="20sp"
+        android:orientation="horizontal"
+        android:weightSum="9"
+        android:layout_width ="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10sp"
+        >
+
+        <TableRow>
+            <TextView
+                android:textAlignment="center"
+                android:layout_marginLeft="20sp"
+                android:layout_marginRight="30sp"
+                android:background="@drawable/round_border_new_category"
+                android:textColor="@color/colorPrimary"
+                android:text="Name"
+                android:paddingTop="10sp"
+                android:paddingBottom="10sp"
+                android:textSize="18sp"
+                android:layout_weight="4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                />
+
+
+            <EditText
+                android:cursorVisible="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:textAlignment="center"
+                android:textCursorDrawable="@null"
+                android:layout_gravity="center_vertical"
+                android:textSize="18sp"
+                android:layout_marginLeft="15sp"
+                android:layout_marginRight="20sp"
+                android:gravity="right"
+                android:inputType="text"
+                android:id="@+id/category_name"
+                android:layout_weight="5"
+                android:layout_width ="0dp"
+                android:layout_height="wrap_content"
+                android:hint = "Eating out"
+                android:textColor="@color/colorPrimary"
+                android:textColorHint="@color/hintColor"
+                />
+        </TableRow>
+
+    </TableLayout>
+
+
+    <TableLayout
+        android:id="@+id/titleLayout"
+        android:paddingTop="10sp"
+        android:orientation="horizontal"
+        android:weightSum="9"
+        android:layout_width ="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10sp">
+
+        <TableRow>
+            <TextView
+                android:textColor="@color/colorPrimary"
+                android:text="Budgets"
+                android:paddingLeft="50dp"
+                android:textSize="20sp"
+                android:layout_weight="4"
+                android:layout_width ="0dp"
+                android:layout_height="wrap_content"
+                />
+        </TableRow>
+    </TableLayout>
+
+
+
+    <TableLayout
+        android:id="@+id/creditLayout"
+        android:paddingTop="10sp"
+        android:orientation="horizontal"
+        android:weightSum="9"
+        android:layout_width ="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10sp">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20sp"
+                android:layout_marginRight="30sp"
+                android:layout_weight="4"
+                android:background="@drawable/round_border_new_category"
+                android:paddingBottom="10sp"
+                android:paddingTop="10sp"
+                android:text="Week"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingBottom="10sp"
+                android:paddingTop="10sp"
+                android:text="$"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/weekly_budget"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5sp"
+                android:layout_marginRight="25sp"
+                android:layout_weight="4"
+                android:cursorVisible="false"
+                android:gravity="center"
+                android:hint="50.00"
+                android:inputType="numberDecimal"
+                android:textColor="@color/colorPrimary"
+                android:textColorHint="@color/hintColor"
+                android:textCursorDrawable="@null"
+                android:textSize="18sp" />
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:paddingTop="10sp"
+        android:orientation="horizontal"
+        android:weightSum="9"
+        android:layout_width ="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10sp">
+
+        <TableRow>
+            <TextView
+                android:textAlignment="center"
+                android:layout_marginLeft="20sp"
+                android:layout_marginRight="30sp"
+                android:background="@drawable/round_border_new_category"
+                android:textColor="@color/colorPrimary"
+                android:text="Month"
+                android:paddingTop="10sp"
+                android:paddingBottom="10sp"
+                android:textSize="18sp"
+                android:layout_weight="4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                />
+
+
+            <TextView
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary"
+                android:text="$"
+                android:paddingTop="10sp"
+                android:paddingBottom="10sp"
+                android:textSize="18sp"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                />
+
+            <EditText
+                android:textCursorDrawable="@null"
+                android:cursorVisible="false"
+                android:textSize="18sp"
+                android:layout_marginLeft="5sp"
+                android:layout_marginRight="25sp"
+                android:id="@+id/monthly_budget"
+                android:gravity="center"
+                android:inputType="numberDecimal"
+                android:hint="200.00"
+                android:layout_weight="4"
+                android:layout_width ="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
+                android:textColorHint="@color/hintColor"
+                />
+        </TableRow>
+    </TableLayout>
+    <TableLayout
+        android:paddingTop="10sp"
+        android:orientation="horizontal"
+        android:weightSum="9"
+        android:layout_width ="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10sp">
+
+        <TableRow>
+            <TextView
+                android:textAlignment="center"
+                android:layout_marginLeft="20sp"
+                android:layout_marginRight="30sp"
+                android:background="@drawable/round_border_new_category"
+                android:textColor="@color/colorPrimary"
+                android:text="Year"
+                android:paddingTop="10sp"
+                android:paddingBottom="10sp"
+                android:textSize="18sp"
+                android:layout_weight="4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                />
+
+
+            <TextView
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary"
+                android:text="$"
+                android:paddingTop="10sp"
+                android:paddingBottom="10sp"
+                android:textSize="18sp"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                />
+
+            <EditText
+                android:textCursorDrawable="@null"
+                android:cursorVisible="false"
+                android:textSize="18sp"
+                android:layout_marginLeft="5sp"
+                android:layout_marginRight="25sp"
+                android:id="@+id/yearly_budget"
+                android:gravity="center"
+                android:inputType="numberDecimal"
+                android:hint="2000.00"
+                android:layout_weight="4"
+                android:layout_width ="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
+                android:textColorHint="@color/hintColor"
+                />
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="10sp"
+        android:paddingTop="10sp"
+        android:weightSum="9">
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20sp"
+                android:layout_marginRight="30sp"
+                android:layout_weight="4"
+                android:background="@drawable/round_border_choose_a_building"
+                android:paddingBottom="10sp"
+                android:paddingTop="10sp"
+                android:text="Choose a Building"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary"
+                android:textSize="20sp" />
+        </TableRow>
+    </TableLayout>
+
+    <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_width="match_parent">
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:scrollbars="vertical" />
+        </LinearLayout>
+
+
+</LinearLayout>

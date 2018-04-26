@@ -1,0 +1,93 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_gravity="center_vertical"
+            android:paddingTop="10sp"
+            android:paddingBottom="10sp"
+            android:weightSum="8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <LinearLayout
+                android:gravity="end"
+                android:layout_weight="1"
+                android:layout_width="0sp"
+                android:layout_height="match_parent" >
+
+                <ImageView
+                    android:id="@+id/graph_indicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:src="@drawable/dot1_final" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_weight="3"
+                android:textSize="18sp"
+                android:paddingLeft="20sp"
+                android:textColor="@color/colorPrimaryDark"
+                android:id="@+id/category_name"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="Category Name"/>
+
+            <TextView
+                android:id="@+id/category_spent"
+                android:layout_weight="3.2"
+                android:textSize="18sp"
+                android:textAlignment="textEnd"
+                android:paddingLeft="20sp"
+                android:textColor="@color/colorPrimary"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="$12.25"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:textSize="18sp"
+                android:textAlignment="textEnd"
+                android:textColor="@color/colorPrimary"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text=""/>
+
+            <TextView
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimary"
+                android:layout_weight="0.8"
+                android:gravity="start"
+                android:layout_gravity="start"
+                android:textSize="18sp"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:id="@+id/category_budget"
+                android:text=""/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_marginLeft="5sp"
+            android:layout_marginRight="5sp"
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/hintColor" />
+    </LinearLayout>
+
+
+
+</LinearLayout>

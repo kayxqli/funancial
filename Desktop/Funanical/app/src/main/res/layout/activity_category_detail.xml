@@ -1,0 +1,232 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:minHeight="?attr/actionBarSize"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/ToolbarColor">
+
+
+
+
+            <LinearLayout
+                android:weightSum="4"
+                android:layout_width="fill_parent"
+                android:layout_height="?android:attr/actionBarSize"
+                android:orientation="horizontal">
+
+
+
+                <LinearLayout
+                    android:id="@+id/toolbar_back_analytics"
+                    android:paddingLeft="20sp"
+                    android:gravity="start"
+                    android:layout_weight="1"
+                    android:layout_width="0sp"
+                    android:layout_height="?android:attr/actionBarSize"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_gravity="end|center_vertical"
+                        android:textSize="15sp"
+                        android:id="@+id/cancel"
+                        style="@style/TextAppearance.Widget.AppCompat.Toolbar.Subtitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:drawableRight="@drawable/back_edit"
+                        android:background="?attr/selectableItemBackground"
+                        android:gravity="center_vertical|end"
+                        android:textAllCaps="true" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:paddingLeft="20sp"
+                    android:gravity="center"
+                    android:layout_weight="2"
+                    android:layout_width="0sp"
+                    android:layout_height="?android:attr/actionBarSize"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/category_title"
+                        style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Geoceries Budget"
+                        android:textColor="@color/textColor" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:paddingRight="20sp"
+                    android:gravity="end"
+                    android:layout_weight="1"
+                    android:layout_width="0sp"
+                    android:layout_height="?android:attr/actionBarSize"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_gravity="end|center_vertical"
+                        android:textSize="15sp"
+                        android:id="@+id/toolbar_add"
+                        style="@style/TextAppearance.Widget.AppCompat.Toolbar.Subtitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:drawableRight="@drawable/edit"
+                        android:background="?attr/selectableItemBackground"
+                        android:gravity="center_vertical|end"
+                        android:textAllCaps="true" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </android.support.v7.widget.Toolbar>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/main_menu"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:paddingTop="10sp"
+            android:paddingBottom="10sp"
+            android:background="@drawable/round_border_graph_title"
+            android:layout_marginTop="20sp"
+            android:layout_marginBottom="10sp"
+            android:layout_marginLeft="50sp"
+            android:layout_marginRight="50sp"
+            android:weightSum="7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_weight="0.8"
+                android:id="@+id/last_graph"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:drawableRight="@drawable/back_edit"
+                android:textSize="20sp" />
+
+            <TextView
+                android:textColor="@color/textColor"
+                android:textAlignment="center"
+                android:layout_weight="5.4"
+                android:id="@+id/graph_title"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10sp"
+                android:text="April 15 - 21 , 2018"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_weight="0.8"
+                android:id="@+id/next_graph"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/next_edit"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="300sp"
+            android:layout_below="@+id/toolbar" />
+
+        <LinearLayout
+            android:padding="15sp"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <com.rd.PageIndicatorView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:attrs="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/viewIndicator"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                app:piv_animationType="scale"
+                app:piv_dynamicCount="true"
+                app:piv_interactiveAnimation="true"
+                app:piv_selectedColor="@android:color/black"
+                app:piv_unselectedColor="@android:color/darker_gray"
+                app:piv_viewPager="@id/viewIndicator"
+                attrs:piv_padding="12dp"
+                attrs:piv_radius="8dp" />
+        </LinearLayout>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="10sp"
+            android:paddingTop="10sp"
+            android:weightSum="9">
+
+            <TableRow>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20sp"
+                    android:layout_marginRight="30sp"
+                    android:layout_weight="4"
+                    android:background="@drawable/round_border_choose_a_building"
+                    android:paddingBottom="10sp"
+                    android:paddingTop="10sp"
+                    android:text="Recent Purchases"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="20sp" />
+            </TableRow>
+        </TableLayout>
+
+        <View
+            android:layout_marginLeft="5sp"
+            android:layout_marginRight="5sp"
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/hintColor" />
+
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:scrollbars="vertical"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true" />
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/quick_add"
+                android:src="@drawable/plus"
+                android:layout_width="50sp"
+                android:layout_height="50sp"
+                android:layout_gravity="bottom|end"
+                android:layout_marginTop="97sp"
+                android:layout_marginRight="30sp"
+                android:layout_alignParentBottom="false"
+                android:layout_alignParentRight="true"/>
+        </RelativeLayout>
+
+
+
+    </LinearLayout>
+    </LinearLayout>

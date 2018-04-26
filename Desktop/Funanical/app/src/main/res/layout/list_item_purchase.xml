@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/catogery_lst">
+
+    <LinearLayout
+        android:layout_gravity="center_vertical"
+        android:paddingTop="10sp"
+        android:paddingBottom="10sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="8">
+
+
+            <TextView
+                android:paddingLeft="30sp"
+                android:id="@+id/purchase_amount"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2.5"
+                android:textAlignment="textStart"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:text="$250" />
+
+            <TextView
+                android:id="@+id/purchase_name"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:paddingLeft="20sp"
+                android:textAlignment="textStart"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:text="Water Bill" />
+
+            <TextView
+                android:paddingRight="30sp"
+                android:id="@+id/purchase_date"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="start"
+                android:layout_weight="2.5"
+                android:gravity="end"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:text="04/04/18" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_marginLeft="5sp"
+        android:layout_marginRight="5sp"
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/hintColor" />
+
+
+</LinearLayout>
