@@ -56,9 +56,6 @@ public class CategoryDetailActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private PageIndicatorView pageIndicatorView;
     private List<Purchase> purchaseList;
-    private List<View> currentPageList;
-//    private List<View> lastPageList;
-//    private List<View> nextPageList;
     private PurchaseListAdapter listAdapter;
     private int timePosition = 0;
     private int curPosition = 0; // -1 means last week, 0 current week, 1 next week
@@ -107,12 +104,12 @@ public class CategoryDetailActivity extends AppCompatActivity {
                     // also need to update adapter for graphic
                     if(curPosition == 0){ // current week
                         title.setText("Apirl 8 - 14, 2018");
-                        currentPageList.set(0, createPageView(R.drawable.clumative_last));
+                        graphicAdapter.setData(createLastGraphList());
                         graphicAdapter.notifyDataSetChanged();
                     }
                     if(curPosition == 1){
                         title.setText("Apirl 15 - 21, 2018");
-                        currentPageList.set(0, createPageView(R.drawable.clumative_current));
+                        graphicAdapter.setData(createCurrentGraphList());
                         graphicAdapter.notifyDataSetChanged();
                     }
                     // avoid false negative
@@ -130,12 +127,12 @@ public class CategoryDetailActivity extends AppCompatActivity {
                     // weekly view, go back to next week
                     if(curPosition == 0){ // current week
                         title.setText("Apirl 22 - 28, 2018");
-                        currentPageList.set(0, createPageView(R.drawable.clumative_next));
+                        graphicAdapter.setData(createNextGraphList());
                         graphicAdapter.notifyDataSetChanged();
                     }
                     if(curPosition == -1) {
                         title.setText("Apirl 15 - 21, 2018");
-                        currentPageList.set(0, createPageView(R.drawable.clumative_current));
+                        graphicAdapter.setData(createCurrentGraphList());
                         graphicAdapter.notifyDataSetChanged();
                     }
                     // avoid false negative
@@ -225,7 +222,7 @@ public class CategoryDetailActivity extends AppCompatActivity {
         );
 
         graphicAdapter = new AnalyticsGraphicAdapter();
-        graphicAdapter.setData(currentPageList);
+        graphicAdapter.setData(createCurrentGraphList());
 
         purchaseList = new ArrayList<>();
 
@@ -294,33 +291,31 @@ public class CategoryDetailActivity extends AppCompatActivity {
 
 
     // ONLY CALL THESE METHOD ONCE
-    private void createCurrentGraphList() {
-        currentPageList = new ArrayList<>();
+    private List<View> createCurrentGraphList() {
+        List<View> currentPageList = new ArrayList<>();
         currentPageList.add(createPageView(R.drawable.clumative_current));
         currentPageList.add(createPageView(R.drawable.clumative_month));
         currentPageList.add(createPageView(R.drawable.clumative_year));
+        return currentPageList;
     }
 
-//    private void createLastGraphList() {
-//        lastPageList = new ArrayList<>();
-//        lastPageList.add(createPageView(R.drawable.clumative_last));
-//        lastPageList.add(createPageView(R.drawable.clumative_month));
-//        lastPageList.add(createPageView(R.drawable.clumative_year));
-//    }
-//
-//    private void createNextGraphList() {
-//        nextPageList = new ArrayList<>();
-//        nextPageList.add(createPageView(R.drawable.clumative_next));
-//        nextPageList.add(createPageView(R.drawable.clumative_month));
-//        nextPageList.add(createPageView(R.drawable.clumative_year));
-//    }
+    private List<View> createLastGraphList() {
+        List<View> lastPageList = new ArrayList<>();
+        lastPageList.add(createPageView(R.drawable.clumative_last));
+        lastPageList.add(createPageView(R.drawable.clumative_month));
+        lastPageList.add(createPageView(R.drawable.clumative_year));
+        return lastPageList;
+    }
+
+    private List<View> createNextGraphList() {
+        List<View> nextPageList = new ArrayList<>();
+        nextPageList.add(createPageView(R.drawable.clumative_next));
+        nextPageList.add(createPageView(R.drawable.clumative_month));
+        nextPageList.add(createPageView(R.drawable.clumative_year));
+        return nextPageList;
+    }
 
     private void preparePurchases() {
-        int[] purchases = new int[]{
-                R.drawable.add,
-                R.drawable.cancel,
-                R.drawable.online_store,
-                R.drawable.save};
 
         Purchase a = new Purchase("Apples", "04/24/2018", 10.00);
         purchaseList.add(a);
