@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.3.0"
+    buildToolsVersion '27.0.3'
     defaultConfig {
         applicationId "edu.umd.cs.funanical"
         minSdkVersion 22
