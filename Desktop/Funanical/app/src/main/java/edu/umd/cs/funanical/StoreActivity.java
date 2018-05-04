@@ -87,7 +87,11 @@ public class StoreActivity extends AppCompatActivity {
                 R.drawable.store5,
                 R.drawable.store6,
                 R.drawable.store7,
-                R.drawable.store8};
+                R.drawable.store8,
+                R.drawable.store9,
+                R.drawable.store10,
+                R.drawable.store11,
+                R.drawable.store12};
 
         Store a = new Store("Tree", 100, stores[0]);
         storesList.add(a);
@@ -104,14 +108,26 @@ public class StoreActivity extends AppCompatActivity {
         a = new Store("Patio Table", 750, stores[3]);
         storesList.add(a);
 
-        a = new Store("City Hall", 1000, stores[6]);
+        a = new Store("Traffic Light", 750, stores[6]);
+        storesList.add(a);
+
+        a = new Store("Air Ballon", 1000, stores[7]);
+        storesList.add(a);
+
+        a = new Store("Squirrel", 1250, stores[8]);
+        storesList.add(a);
+
+        a = new Store("Rabbit", 1250, stores[9]);
+        storesList.add(a);
+
+        a = new Store("City Hall", 1000, stores[10]);
         storesList.add(a);
 
         a = new Store("Big Ben", 1500, stores[4]);
         storesList.add(a);
 
 
-        a = new Store("Upgrade building", 1500, stores[7]);
+        a = new Store("Upgrade building", 1500, stores[11]);
         storesList.add(a);
 
         adapter.notifyDataSetChanged();

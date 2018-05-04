@@ -1,7 +1,9 @@
 package edu.umd.cs.funanical;
 
 import android.app.DatePickerDialog;
+import android.graphics.Color;
 import android.graphics.RectF;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
@@ -20,7 +22,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.Spinner;
+import android.widget.TableLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,6 +38,10 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
+import edu.umd.cs.funanical.Objects.Category;
+
+import static android.app.Activity.RESULT_OK;
+
 /**
  * Created by apple on 4/18/18.
  */
@@ -41,6 +49,7 @@ import java.util.Locale;
 public class MainFragment extends Fragment {
 
     private ImageView menu_btn;
+    private PhotoView mPhotoView;
     private View menuView;
     private TextView buildingTitle;
     private FloatingActionButton quick_add_btn;
@@ -50,11 +59,9 @@ public class MainFragment extends Fragment {
     private static final int REQUEST_CODE_STORE = 2;
     private static final int REQUEST_CODE_ANALYTICS = 3;
     static final String PHOTO_TAP_TOAST_STRING = "Photo Tap! X: %.2f %% Y:%.2f %% ID: %d";
-    static final String SCALE_TOAST_STRING = "Scaled to: %.2ff";
     static final String FLING_LOG_STRING = "Fling velocityX: %.2f, velocityY: %.2f";
     private Toast mCurrentToast;
-    private TextView mCurrMatrixTv;
-
+    private boolean addNewCategory = false;
 
 
 
@@ -73,13 +80,11 @@ public class MainFragment extends Fragment {
     public View onCreateView(final LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_main, container, false);
-        PhotoView mPhotoView = (PhotoView) view.findViewById(R.id.photo_view);
-        mPhotoView.setImageResource(R.drawable.pixel);
+        mPhotoView = (PhotoView) view.findViewById(R.id.photo_view);
 
-        // Lets attach some listeners, not required though!
-        mPhotoView.setOnMatrixChangeListener(new MatrixChangeListener());
         mPhotoView.setOnPhotoTapListener(new PhotoTapListener());
         mPhotoView.setOnSingleFlingListener(new SingleFlingListener());
+        updateBackground();
 
 
         // initalize all button
@@ -87,8 +92,6 @@ public class MainFragment extends Fragment {
         main_screen = (LinearLayout)view.findViewById(R.id.main_menu);
         quick_add_btn = (FloatingActionButton)view.findViewById(R.id.quick_add);
         buildingTitle = (TextView)view.findViewById(R.id.building_title);
-
-        mCurrMatrixTv = (TextView) view.findViewById(R.id.tv_current_matrix);
 
         menu_btn.setOnClickListener(
                 new View.OnClickListener() {
@@ -98,6 +101,7 @@ public class MainFragment extends Fragment {
                         LinearLayout category_btn = (LinearLayout)menuView.findViewById(R.id.category);
                         LinearLayout stat_btn = (LinearLayout)menuView.findViewById(R.id.stat);
                         LinearLayout store_btn = (LinearLayout)menuView.findViewById(R.id.store);
+                        RelativeLayout menu_popupMain = (RelativeLayout)menuView.findViewById(R.id.outside_menu);
 
 
                         // Create another layout fix size to put it in the middle
@@ -146,6 +150,7 @@ public class MainFragment extends Fragment {
 
                                 });
                         menu_popup.showAtLocation(main_screen, Gravity.CENTER, 0, 0);
+                        // Closes the popup window when touch outside.
                     }
                 }
         );
@@ -195,11 +200,15 @@ public class MainFragment extends Fragment {
                             }
                         });
 
+                        final TableLayout receipt = (TableLayout)menuView.findViewById(R.id.receipt_layout);
+
+
+
                         menuView.findViewById(R.id.camera_btn).setOnClickListener(new View.OnClickListener() {
 
                             @Override
                             public void onClick(View v) {
-
+                                receipt.setVisibility(View.VISIBLE);
                             }
                         });
 
@@ -241,6 +250,27 @@ public class MainFragment extends Fragment {
         return view;
     }
 
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        // Check which request we're responding to
+        if (requestCode == REQUEST_CODE_CATEGORY) {
+            // Make sure the request was successful
+            if (resultCode == RESULT_OK) {
+                addNewCategory = true;
+                updateBackground();
+            }
+        }
+    }
+
+    private void updateBackground(){
+        if (addNewCategory == false){
+            mPhotoView.setImageResource(R.drawable.town_final);
+        } else{
+            mPhotoView.setImageResource(R.drawable.before_town);
+            buildingTitle.setVisibility(View.INVISIBLE);
+        }
+    }
+
     private class PhotoTapListener implements OnPhotoTapListener {
 
         @Override
@@ -248,8 +278,9 @@ public class MainFragment extends Fragment {
             float xPercentage = x * 100f;
             float yPercentage = y * 100f;
 
-            if(xPercentage < 20 && yPercentage < 31){
+            if(yPercentage > 37 && yPercentage < 55  && xPercentage < 40){
                 buildingTitle.setVisibility(View.VISIBLE);
+                buildingTitle.setText("Groceries      Lv3");
                 buildingTitle.setOnClickListener(
                         new View.OnClickListener() {
                             public void onClick(View v) {
@@ -258,8 +289,21 @@ public class MainFragment extends Fragment {
                             }
                         }
                 );
-            }
-
+            } else if(yPercentage > 10 && yPercentage < 24  && xPercentage < 24) {
+                buildingTitle.setVisibility(View.VISIBLE);
+                buildingTitle.setText("Clothing      Lv2");
+            } else if(yPercentage > 30 && yPercentage < 45  && xPercentage < 86 && xPercentage > 54) {
+                buildingTitle.setVisibility(View.VISIBLE);
+                buildingTitle.setText("Pets      Lv2");
+            } else if(yPercentage > 59 && yPercentage < 83  && xPercentage > 50 && xPercentage < 90) {
+                buildingTitle.setVisibility(View.VISIBLE);
+                buildingTitle.setText("Movies      Lv2");
+            } else if(yPercentage > 83 && yPercentage < 98  && xPercentage < 61 && xPercentage > 30) {
+                buildingTitle.setVisibility(View.VISIBLE);
+                buildingTitle.setText("Eating Out      Lv1");
+            } else{
+                    buildingTitle.setVisibility(View.INVISIBLE);
+                }
             //showToast(String.format(PHOTO_TAP_TOAST_STRING, xPercentage, yPercentage, view == null ? 0 : view.getId()));
         }
     }
@@ -271,14 +315,6 @@ public class MainFragment extends Fragment {
 
         mCurrentToast = Toast.makeText(getActivity(), text, Toast.LENGTH_SHORT);
         mCurrentToast.show();
-    }
-
-    private class MatrixChangeListener implements OnMatrixChangedListener {
-
-        @Override
-        public void onMatrixChanged(RectF rect) {
-            mCurrMatrixTv.setText(rect.toString());
-        }
     }
 
     private class SingleFlingListener implements OnSingleFlingListener {

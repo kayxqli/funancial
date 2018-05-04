@@ -15,7 +15,7 @@
 
     <string-array name="category_array">
         <item>Clothing</item>
-        <item>Geoceries</item>
+        <item>Groceries</item>
         <item>Movies</item>
         <item>Pets</item>
     </string-array>

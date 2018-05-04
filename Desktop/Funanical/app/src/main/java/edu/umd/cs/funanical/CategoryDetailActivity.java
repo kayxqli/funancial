@@ -153,19 +153,6 @@ public class CategoryDetailActivity extends AppCompatActivity {
                         menu_popup = new PopupWindow(menuView, LinearLayout.LayoutParams.MATCH_PARENT,
                                 LinearLayout.LayoutParams.MATCH_PARENT);
 
-                        List<String> lst = new ArrayList<String>();
-                        lst.add("Clothing");
-                        lst.add("Movies");
-                        lst.add("Pets");
-                        lst.add("Geoceries");
-                        Spinner categorySpinner = (Spinner)menuView.findViewById(R.id.category_spinner);
-                        ArrayAdapter<String> adapter =  new ArrayAdapter<String>(CategoryDetailActivity.this,
-                                android.R.layout.simple_spinner_item, lst);
-                        // Specify the layout to use when the list of choices appears
-                        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                        // Apply the adapter to the spinner
-                        categorySpinner.setAdapter(adapter);
-
                         final EditText date_input = (EditText)menuView.findViewById(R.id.date);
                         String today = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(new Date());
                         date_input.setText(today);
@@ -317,7 +304,7 @@ public class CategoryDetailActivity extends AppCompatActivity {
 
     private void preparePurchases() {
 
-        Purchase a = new Purchase("Apples", "04/24/2018", 10.00);
+        Purchase a = new Purchase("Apples", "05/02/2018", 10.00);
         purchaseList.add(a);
 
         a = new Purchase("Yogurt", "04/20/2018", 4.00);

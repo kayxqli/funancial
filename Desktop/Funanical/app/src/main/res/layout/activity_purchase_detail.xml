@@ -155,7 +155,7 @@
                 android:layout_weight="5"
                 android:paddingBottom="10sp"
                 android:paddingTop="10sp"
-                android:text="04/24/2018"
+                android:text="05/02/2018"
                 android:textAlignment="textStart"
                 android:textColor="@color/colorPrimary"
                 android:textSize="18sp" />
@@ -195,7 +195,7 @@
                 android:layout_weight="5"
                 android:paddingBottom="10sp"
                 android:paddingTop="10sp"
-                android:text="Geoceries"
+                android:text="Groceries"
                 android:textAlignment="textStart"
                 android:textColor="@color/colorPrimary"
                 android:textSize="18sp" />
@@ -235,7 +235,7 @@
                 android:layout_weight="5"
                 android:paddingBottom="10sp"
                 android:paddingTop="10sp"
-                android:text="Yogurt"
+                android:text="Apples"
                 android:textAlignment="textStart"
                 android:textColor="@color/colorPrimary"
                 android:textSize="18sp" />

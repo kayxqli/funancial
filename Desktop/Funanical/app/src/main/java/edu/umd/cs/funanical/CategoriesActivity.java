@@ -116,7 +116,7 @@ public class CategoriesActivity extends AppCompatActivity {
         Category a = new Category("Pets", 25.00, 25.00, 25.00, 50.00, 500.00, 12.25, 19.25, 22.25, 22.25, 252.25, categories[0], 0);
         categoryList.add(a);
 
-        a = new Category("Geoceries", 35.00, 35.00, 35.00, 150.00, 1500.00, 26.12, 31.12, 36.22, 60.12, 500.12, categories[1], 0);
+        a = new Category("Groceries", 35.00, 35.00, 35.00, 150.00, 1500.00, 26.12, 31.12, 36.22, 60.12, 500.12, categories[1], 0);
         categoryList.add(a);
 
         a = new Category("Clothing", 35.00, 20.00, 30.00, 75.00, 700.00, 35.8, 15.80, 22.80, 30.8, 300.80, categories[2], 0);

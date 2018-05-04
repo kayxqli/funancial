@@ -180,18 +180,18 @@
                     android:textSize="18sp" />
 
 
-                <Spinner
-                    android:spinnerMode="dialog"
-                    android:id="@+id/category_spinner"
-                    android:layout_width="0sp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="5"
-                    android:clickable="true"
-                    android:drawSelectorOnTop="true"
-                    android:paddingLeft="20sp"
-                    android:paddingRight="20sp"
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20sp"
+                    android:layout_marginRight="30sp"
+                    android:layout_weight="4.5"
+                    android:paddingBottom="10sp"
+                    android:paddingTop="10sp"
+                    android:text="Groceries"
                     android:textAlignment="center"
-                    android:textSize="20sp" />
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18sp" />
             </TableRow>
         </TableLayout>
 
@@ -231,7 +231,7 @@
                     android:gravity="center"
                     android:inputType="text"
                     android:hint="Apples"
-                    android:layout_weight="3.8"
+                    android:layout_weight="3.5"
                     android:layout_width ="0dp"
                     android:layout_height="wrap_content"
                     android:textColor="@color/colorPrimary"
@@ -241,14 +241,14 @@
                 <LinearLayout
                     android:layout_width="0sp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1.2">
+                    android:layout_weight="1.5">
                     <ImageView
                         android:id="@+id/camera_btn"
                         android:layout_marginTop="0sp"
                         android:layout_gravity="center_vertical|start"
                         android:src="@drawable/camera"
-                        android:layout_width="30sp"
-                        android:layout_height="30sp"/>
+                        android:layout_width="40sp"
+                        android:layout_height="40sp"/>
                 </LinearLayout>
             </TableRow>
         </TableLayout>
@@ -272,7 +272,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20sp"
-                    android:layout_marginRight="30sp"
+                    android:layout_marginRight="20sp"
                     android:layout_weight="4.5"
                     android:background="@drawable/round_border_save"
                     android:paddingBottom="10sp"
@@ -287,7 +287,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20sp"
-                    android:layout_marginRight="30sp"
+                    android:layout_marginRight="20sp"
                     android:layout_weight="4.5"
                     android:background="@drawable/round_border_cancel"
                     android:paddingBottom="10sp"

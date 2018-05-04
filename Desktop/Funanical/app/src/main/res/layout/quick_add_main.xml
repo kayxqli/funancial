@@ -6,12 +6,11 @@
 
 
     <LinearLayout
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:orientation="vertical"
-        android:background="@drawable/round_border_quick_add"
         android:layout_width="340sp"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/round_border_quick_add"
+        android:orientation="vertical">
 
 
         <TableLayout
@@ -25,7 +24,6 @@
             <TableRow>
 
                 <TextView
-                    android:textStyle="bold"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20sp"
@@ -37,85 +35,82 @@
                     android:text="Quick Add"
                     android:textAlignment="center"
                     android:textColor="@color/colorPrimary"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
             </TableRow>
         </TableLayout>
 
         <TableLayout
-            android:paddingRight="15sp"
             android:id="@+id/nameLayout"
-            android:paddingTop="20sp"
-            android:orientation="horizontal"
-            android:weightSum="9"
-            android:layout_width ="match_parent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="horizontal"
             android:paddingBottom="10sp"
-            >
+            android:paddingRight="15sp"
+            android:paddingTop="20sp"
+            android:weightSum="9">
 
             <TableRow>
+
                 <TextView
-                    android:textAlignment="center"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="20sp"
                     android:layout_marginRight="30sp"
-                    android:background="@drawable/round_border_new_category"
-                    android:textColor="@color/colorPrimary"
-                    android:text="Amount"
-                    android:paddingTop="10sp"
-                    android:paddingBottom="10sp"
-                    android:textSize="18sp"
                     android:layout_weight="4"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    />
+                    android:background="@drawable/round_border_new_category"
+                    android:paddingBottom="10sp"
+                    android:paddingTop="10sp"
+                    android:text="Amount"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18sp" />
 
 
                 <TextView
-                    android:textAlignment="center"
-                    android:textColor="@color/colorPrimary"
-                    android:text="$"
-                    android:paddingTop="10sp"
-                    android:paddingBottom="10sp"
-                    android:textSize="18sp"
-                    android:layout_weight="0.4"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    />
+                    android:layout_weight="0.4"
+                    android:paddingBottom="10sp"
+                    android:paddingTop="10sp"
+                    android:text="$"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18sp" />
 
 
                 <EditText
+                    android:id="@+id/purchase_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="15sp"
+                    android:layout_marginRight="20sp"
+                    android:layout_weight="4.6"
                     android:cursorVisible="true"
                     android:focusable="true"
                     android:focusableInTouchMode="true"
-                    android:textAlignment="center"
-                    android:textCursorDrawable="@null"
-                    android:layout_gravity="center_vertical"
-                    android:textSize="18sp"
-                    android:layout_marginLeft="15sp"
-                    android:layout_marginRight="20sp"
                     android:gravity="right"
+                    android:hint="10.00"
                     android:inputType="numberDecimal"
-                    android:id="@+id/purchase_name"
-                    android:layout_weight="4.6"
-                    android:layout_width ="0dp"
-                    android:layout_height="wrap_content"
-                    android:hint = "10.00"
+                    android:textAlignment="center"
                     android:textColor="@color/colorPrimary"
                     android:textColorHint="@color/hintColor"
-                    />
+                    android:textCursorDrawable="@null"
+                    android:textSize="18sp" />
             </TableRow>
 
         </TableLayout>
 
 
-
         <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="10sp"
             android:paddingRight="15sp"
             android:paddingTop="10sp"
-            android:orientation="horizontal"
-            android:weightSum="9"
-            android:layout_width ="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingBottom="10sp">
+            android:weightSum="9">
 
             <TableRow
                 android:layout_width="match_parent"
@@ -154,11 +149,11 @@
         </TableLayout>
 
         <TableLayout
-            android:paddingRight="15sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:paddingBottom="10sp"
+            android:paddingRight="15sp"
             android:paddingTop="10sp"
             android:weightSum="9">
 
@@ -181,7 +176,6 @@
 
 
                 <Spinner
-                    android:spinnerMode="dialog"
                     android:id="@+id/category_spinner"
                     android:layout_width="0sp"
                     android:layout_height="match_parent"
@@ -190,86 +184,129 @@
                     android:drawSelectorOnTop="true"
                     android:paddingLeft="20sp"
                     android:paddingRight="20sp"
+                    android:spinnerMode="dialog"
                     android:textAlignment="center"
                     android:textSize="20sp" />
             </TableRow>
         </TableLayout>
 
         <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="10sp"
             android:paddingRight="15sp"
             android:paddingTop="10sp"
-            android:orientation="horizontal"
-            android:weightSum="9"
-            android:layout_width ="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingBottom="10sp">
+            android:weightSum="9">
 
             <TableRow>
+
                 <TextView
-                    android:textAlignment="center"
-                    android:layout_marginLeft="20sp"
-                    android:layout_marginRight="30sp"
-                    android:background="@drawable/round_border_new_category"
-                    android:textColor="@color/colorPrimary"
-                    android:text="Description"
-                    android:paddingTop="10sp"
-                    android:paddingBottom="10sp"
-                    android:textSize="18sp"
-                    android:layout_weight="4"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    />
+                    android:layout_marginLeft="20sp"
+                    android:layout_marginRight="30sp"
+                    android:layout_weight="4"
+                    android:background="@drawable/round_border_new_category"
+                    android:paddingBottom="10sp"
+                    android:paddingTop="10sp"
+                    android:text="Description"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18sp" />
 
 
                 <EditText
-                    android:textCursorDrawable="@null"
-                    android:cursorVisible="false"
-                    android:textSize="18sp"
+                    android:id="@+id/yearly_budget"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="5sp"
                     android:layout_marginRight="25sp"
-                    android:id="@+id/yearly_budget"
+                    android:layout_weight="3.5"
+                    android:cursorVisible="false"
                     android:gravity="center"
-                    android:inputType="text"
                     android:hint="Apples"
-                    android:layout_weight="3.8"
-                    android:layout_width ="0dp"
-                    android:layout_height="wrap_content"
+                    android:inputType="text"
                     android:textColor="@color/colorPrimary"
                     android:textColorHint="@color/hintColor"
-                    />
+                    android:textCursorDrawable="@null"
+                    android:textSize="18sp" />
 
                 <LinearLayout
                     android:layout_width="0sp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1.2">
+                    android:layout_weight="1.5">
+
                     <ImageView
                         android:id="@+id/camera_btn"
-                        android:layout_marginTop="0sp"
+                        android:layout_width="40sp"
+                        android:layout_height="40sp"
                         android:layout_gravity="center_vertical|start"
-                        android:src="@drawable/camera"
-                        android:layout_width="30sp"
-                        android:layout_height="30sp"/>
+                        android:layout_marginTop="0sp"
+                        android:src="@drawable/camera" />
                 </LinearLayout>
+            </TableRow>
+        </TableLayout>
+
+
+        <TableLayout
+            android:id="@+id/receipt_layout"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="10sp">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="15sp">
+
+                <ImageView
+                    android:id="@+id/receipt_quick_add"
+                    android:layout_width="110dp"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="30sp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/receipt_quick_add"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18sp" />
+
+                <ImageView
+                    android:background="@drawable/round_border_cancel"
+                    android:id="@+id/add_more_pic"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="20sp"
+                    android:layout_marginRight="30sp"
+                    android:paddingBottom="10sp"
+                    android:paddingTop="10sp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/plus"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18sp" />
             </TableRow>
         </TableLayout>
 
         <TableLayout
             android:id="@+id/creditLayout"
-            android:paddingTop="10sp"
-            android:orientation="horizontal"
-            android:weightSum="9"
-            android:layout_width ="match_parent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="10sp">
+            android:orientation="horizontal"
+            android:paddingBottom="10sp"
+            android:paddingTop="10sp"
+            android:weightSum="9">
 
             <TableRow
-                android:paddingBottom="15sp"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:paddingBottom="15sp">
 
                 <TextView
                     android:id="@+id/save_btn"
-                    android:layout_width="0dp"
+                    android:layout_width="0sp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20sp"
                     android:layout_marginRight="30sp"
@@ -298,10 +335,6 @@
                     android:textSize="18sp" />
             </TableRow>
         </TableLayout>
-
-
-
-
 
 
     </LinearLayout>
